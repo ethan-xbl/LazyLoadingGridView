@@ -98,9 +98,10 @@ public class LazyImageAdapter extends BaseAdapter implements ImageLoadListener {
 			lViewSwitcher.setPadding(8, 8, 8, 8);
 			
 			ProgressBar lProgress = new ProgressBar(mContext);
+			lProgress.setLayoutParams(new ViewSwitcher.LayoutParams(80, 80));
 			lViewSwitcher.addView(lProgress);
 			ImageView lImage = new ImageView(mContext);
-			lImage.setLayoutParams(new Gallery.LayoutParams(100, 100));
+			lImage.setLayoutParams(new ViewSwitcher.LayoutParams(100, 100));
 
 			lViewSwitcher.addView(lImage);
 
@@ -131,6 +132,7 @@ public class LazyImageAdapter extends BaseAdapter implements ImageLoadListener {
 			ImageView lImageView = (ImageView) lViewSwitcher.getChildAt(1);
 			lViewSwitcher.setDisplayedChild(PROGRESSBARINDEX);
 			mImageLoader.queueImageLoad(lPath, lImageView, lViewSwitcher);
+			
 
 		}
 
